@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="col s12">
+    <form action="#">
+      <div class="row">
+          <div class="input-field col s10">    
+          <input [(ngModel)]="criteria" name="criteria" placeholder="¿Que producto deseas buscar?" type="text"> 
+          </div>
+          <div class="input-field col s2">
+              <button class="btn waves-effect waves-light" (click)="searchProducts()" name="action">Buscar
+                  <i class="material-icons left">search</i>
+                </button> 
+          </div>
+      </div>
+      <div *ngIf="isSearching === true">
+        <app-product-list></app-product-list>
+      </div>
+    </form>
+  </div>
+</div>
