@@ -1,11 +1,12 @@
 <nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Jose's Distribution</a>
+  <div class="nav-wrapper grey darken-4">
+    <a [routerLink]="['/']" class="brand-logo">Jose's Shop</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a >Inicio</a></li>
-      <li><a >Buscar Productos</a></li>
-      <li><a href="">Sobre Nosotros</a></li>
+      <li><a [routerLink]="['/']">Inicio</a></li>
+      <li><a [routerLink]="['/search']">Buscar Productos</a></li>
+      <li><a [routerLink]="['contact']">Sobre Mí</a></li>
     </ul>
   </div>
 </nav>
 <router-outlet></router-outlet>
+

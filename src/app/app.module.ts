@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './component/search/search.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { MercadoLibreService } from './service/mercado-libre.service';
+import { AboutUsComponent } from './component/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ProductListComponent
+    ProductListComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
