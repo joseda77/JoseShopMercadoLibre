@@ -4,7 +4,7 @@
     <form action="#">
       <div class="row">
           <div class="input-field col s10">    
-          <input [(ngModel)]="criteria" name="criteria" placeholder="¿Que producto deseas buscar?" type="text"> 
+          <input [(ngModel)]="criterion" name="criterion" placeholder="¿Que producto deseas buscar?" type="text"> 
           </div>
           <div class="input-field col s2">
               <button class="btn waves-effect waves-light" (click)="searchProducts()" name="action">Buscar
@@ -12,8 +12,8 @@
                 </button> 
           </div>
       </div>
-      <div *ngIf="isSearching === true">
-        <app-product-list></app-product-list>
+      <div *ngIf="isSearching">
+        <app-product-list [criteria]="criteria">Cargando...</app-product-list>
       </div>
     </form>
   </div>

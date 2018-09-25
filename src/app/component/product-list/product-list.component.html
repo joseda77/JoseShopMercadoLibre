@@ -1,3 +1,37 @@
-<p>
-  Hello World;
-</p>
+<div class="row">
+  <div [hidden]="!flag">
+    <h3>{{message}}</h3>
+  </div>
+  <div class="col s12 m6 responsive-div" *ngFor="let product of productList">
+    <div class="card" style="width:461px; height:603px;">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator responsive-img" src="{{product.image}}" style="width: 416px; max-height: 416px; min-width: 100%; min-height: 100%;">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{product.title}}<i class="material-icons right">more_vert</i></span>
+        <p id=price>${{product.price}} {{product.currency_id}}</p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4" id="title">{{product.title}}<i class="material-icons right">close</i></span>
+        <span id="title">Precio:</span>
+        <span id="price"> ${{product.price}} {{product.currency_id}}</span>
+        <div>
+          <span id="title">Estado del producto:</span>
+          <span> {{product.condition}}</span>
+        </div>
+        <div>
+          <span id="title">Cantidad disponible:</span>
+          <span> {{product.available_quantity}} unidades</span>
+        </div>
+        <hr>
+        <div>
+          <span id="title">Ubicación:</span>
+          <span> {{product.state}}</span>
+        </div>
+        <hr>
+        <h5>Descripción del producto</h5>
+        <p>{{product.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

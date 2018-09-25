@@ -7,13 +7,26 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class MercadoLibreService {
-  private url = 'https://api.mercadolibre.com/sites/MLU/';
+  private urlSearch = 'https://api.mercadolibre.com/sites/MCO/';
+  private urlProduct = 'https://api.mercadolibre.com/items/';
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
-  getProducts(item):Observable<any>{
-    return this.http.get(this.url+'search?q='+item).map(response =>{
+  getProducts(item): Observable<any> {
+    return this.http.get(this.urlSearch + 'search?q=' + item).map(response => {
       return response;
+    });
+  }
+
+  getDetailsProduct(id) {
+    return this.http.get(this.urlProduct + id).map(response => {
+      return response.json();
+    });
+  }
+
+  getDescripProduct(id, idDesc) {
+    return this.http.get(this.urlProduct + id + '/descriptions/'+idDesc).map(response => {
+      return response.json();
     });
   }
 }

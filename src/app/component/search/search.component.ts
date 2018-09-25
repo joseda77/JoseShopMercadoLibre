@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   isSearching = false;
+  criterion:string = '';
   criteria:string = '';
+  update: boolean = false;
 
   constructor(private mercadoService: MercadoLibreService, private router: Router) { }
 
@@ -17,17 +19,14 @@ export class SearchComponent implements OnInit {
   }
 
   private searchProducts(){
-    if(this.criteria === ''){
+    this.isSearching = false;
+    if(this.criterion === ''){
       alert('Por favor ingrese un criterio de busqueda');
       this.isSearching = false;
       return;
     }
-    this.mercadoService.getProducts(this.criteria).subscribe( result => {
-      var jsonResult = result.json();
-      var productList = jsonResult.results;
-      console.log(productList[0]);
-    });
-    console.log(this.criteria);
-    this.isSearching = true;    
+    this.criteria = this.criterion;
+    this.isSearching = true;  
   }
+
 }
