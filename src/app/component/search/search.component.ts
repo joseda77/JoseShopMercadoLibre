@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {    
   }
 
-  private searchProducts(){
+  searchProducts(){
     this.isSearching = false;
     if(this.criterion === ''){
       alert('Por favor ingrese un criterio de busqueda');
